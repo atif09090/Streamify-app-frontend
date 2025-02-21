@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Music Streaming Dashboard
+
+A React dashboard for visualizing music streaming platform analytics.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -27,34 +29,54 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-## Learn More
+- Statistics dashboard with KPI cards
+- Interactive charts (user growth, revenue distribution, top songs)
+- Sortable and filterable data table
+- Component interaction between charts and tables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/
+│   ├── DashboardStats.js - Statistics cards
+│   ├── DataCharts.js - Line, pie, and bar charts
+│   └── DataTable.js - Sortable data grid
+└── App.js - Main component
+```
 
-### Code Splitting
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- React
+- Tailwind CSS
+- Recharts
+- Heroicons
 
-### Analyzing the Bundle Size
+## Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm start       # Starts the development server
+npm run build   # Builds the app for production
+npm test        # Runs the test suite
+npm run eject   # Ejects from create-react-app
+```
 
-### Making a Progressive Web App
+## Data Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- App component maintains the selectedFilter state
+- Clicking pie chart segments updates the filter
+- Data table responds to filter changes
+- Table supports sorting by date and stream count
+- Two filter inputs for artist and song name
 
-### Advanced Configuration
+## Description
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The dashboard displays three main sections:
 
-### Deployment
+1. **Stats Overview**: Shows total users, active users, streams, revenue, and top artist
+2. **Charts**: User growth line chart, revenue distribution pie chart, top songs bar chart
+3. **Data Table**: Lists recent streams with sortable columns and filter inputs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All components are responsive and adapt to different screen sizes using Tailwind CSS grid system.
